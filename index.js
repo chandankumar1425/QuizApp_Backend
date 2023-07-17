@@ -13,7 +13,7 @@ app.use(express.json())
 app.use(cors())
 app.use("/user",UserRouter);
 app.use("/quiz",QuizRouter);
-
+//connection
 app.listen(4040, async(req,res)=>{
     try{
         await connection 
@@ -24,3 +24,5 @@ app.listen(4040, async(req,res)=>{
     }
     console.log("server is running on port 4040");
 })
+
+
