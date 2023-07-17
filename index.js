@@ -1,4 +1,5 @@
 const express = require('express');
+const cors = require("cors");
 require('dotenv').config();
 const connection = require('./db')
 const {UserRouter} = require('./routes/user.route')
@@ -9,6 +10,7 @@ app.get('/', (req, res) =>{
     res.send("Welcome to QuizApplication")
 })
 app.use(express.json())
+app.use(cors())
 app.use("/user",UserRouter);
 app.use("/quiz",QuizRouter);
 
